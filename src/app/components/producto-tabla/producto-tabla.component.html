@@ -1,0 +1,36 @@
+<h2>Productos por bodega</h2>
+
+@switch (status()) {
+  @case ('loading') {
+    <p>Cargando...</p>
+  }
+  @case ('error') {
+    <p>No fue posible cargar los productos</p>
+  }
+  @default {
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Bodega</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (p of items(); track p.id) {
+          <tr>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.precio | number }}</td>
+            <td>{{ p.cantidad }}</td>
+            <td>{{ p.bodega }}</td>
+          </tr>
+        } @empty {
+          <tr>
+            <td colspan="4">No hay productos registrados</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+}
