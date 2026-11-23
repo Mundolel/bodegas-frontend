@@ -1,0 +1,29 @@
+<h2>Registrar bodega</h2>
+
+@if (message()) {
+  <p>{{ message() }}</p>
+}
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label>
+    Nombre
+    <input formControlName="nombre">
+  </label>
+  @if (form.controls.nombre.touched && form.controls.nombre.hasError('required')) {
+    <small>El nombre es obligatorio</small>
+  }
+  <br>
+
+  <label>
+    Ubicación
+    <input formControlName="ubicacion">
+  </label>
+  @if (form.controls.ubicacion.touched && form.controls.ubicacion.hasError('required')) {
+    <small>La ubicación es obligatoria</small>
+  }
+  <br>
+
+  <button type="submit" [disabled]="saving()">
+    @if (saving()) { Guardando... } @else { Guardar }
+  </button>
+</form>
