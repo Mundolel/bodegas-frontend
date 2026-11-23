@@ -3,7 +3,6 @@ import { DecimalPipe } from '@angular/common';
 import { BodegaService } from '../../services/bodega.service';
 import { Producto } from '../../models/producto.model';
 
-/** Fila de la tabla: el producto junto con el nombre de la bodega a la que pertenece. */
 interface ProductoConBodega extends Producto {
   bodega: string;
 }
@@ -25,7 +24,6 @@ export class ProductoTablaComponent implements OnInit {
     this.cargar();
   }
 
-  /** Consulta GET /bodegas y aplana los productos de cada bodega en una sola lista. */
   cargar(): void {
     this.status.set('loading');
     this.bodegaService.listar().subscribe({
