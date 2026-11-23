@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { BodegaFormComponent } from './components/bodega-form/bodega-form.component';
+import { ProductoTablaComponent } from './components/producto-tabla/producto-tabla.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [BodegaFormComponent, ProductoTablaComponent],
   templateUrl: './app.component.html'
 })
 export class AppComponent {
