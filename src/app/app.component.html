@@ -1,4 +1,9 @@
 <main>
   <h1>{{ title }}</h1>
-  <router-outlet />
+
+  <app-bodega-form (registrada)="tabla.cargar()" />
+
+  <hr>
+
+  <app-producto-tabla #tabla />
 </main>
