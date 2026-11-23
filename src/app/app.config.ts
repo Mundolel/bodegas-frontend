@@ -6,7 +6,6 @@ import localeEsCo from '@angular/common/locales/es-CO';
 
 import { routes } from './app.routes';
 
-// Formato colombiano en los pipes de numeros: 2.500.000 en vez de 2,500,000.
 registerLocaleData(localeEsCo);
 
 export const appConfig: ApplicationConfig = {
